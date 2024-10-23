@@ -232,6 +232,7 @@ public class EjemploWebElements {
         Thread.sleep(1000);
 
         check.click();
+
     }
 
 
