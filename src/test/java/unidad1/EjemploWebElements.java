@@ -1,4 +1,4 @@
-package scripts;
+package unidad1;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -66,7 +66,7 @@ public class EjemploWebElements {
 
         driver.findElement(By.xpath("//button[contains(text(),'Registrarte')]")).click();
 
-        driver.findElement(By.name("username")).sendKeys("UsgdsfdghdfOTEST@algo.cl");
+        driver.findElement(By.name("username")).sendKeys("UusuarioBootcamp1@gmail.cl");
 
         WebElement btnCerrarPopUp = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@aria-label='Cerrar']")));
 
