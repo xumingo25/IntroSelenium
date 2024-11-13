@@ -13,7 +13,14 @@ dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+    testImplementation 'org.apache.poi:poi-ooxml:4.1.2'
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    testImplementation 'org.apache.poi:poi:4.1.2'
+    testImplementation("io.github.bonigarcia:webdrivermanager:5.9.2")
+
+
 
 }
 
