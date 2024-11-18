@@ -21,7 +21,7 @@ public class DataDriven {
 
         FileInputStream file = null;
         try {
-            file = new FileInputStream("C:\\Users\\domingo.saavedra\\Desktop\\IntroSelenium\\src\\test\\resources\\data\\DataPruebas.xlsx");
+            file = new FileInputStream(Propertiesdriven.obtenerProperty("rutaExcel"));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -36,7 +36,7 @@ public class DataDriven {
         int sheets = excel.getNumberOfSheets();
 
         for(int i =0; i< sheets;i++){
-            if(excel.getSheetName(i).equalsIgnoreCase("data")){
+            if(excel.getSheetName(i).equalsIgnoreCase(Propertiesdriven.obtenerProperty("hojaDataExcel"))){
                 XSSFSheet hojaExcel = excel.getSheetAt(i);
 
                 Iterator<Row> filas = hojaExcel.iterator();
@@ -49,7 +49,7 @@ public class DataDriven {
                 int columna =0;
                 while(celdas.hasNext()){
                     Cell celdaSelecciona = celdas.next();
-                    if(celdaSelecciona.getStringCellValue().equalsIgnoreCase("TituloCPS")){
+                    if(celdaSelecciona.getStringCellValue().equalsIgnoreCase(Propertiesdriven.obtenerProperty("TituloCPS"))){
                         //Encontre la columna con los nombres de los casos de prueba
                         columna = k;
                     }

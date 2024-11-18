@@ -12,6 +12,7 @@ import unidad2.pages.LoginPage;
 import unidad2.pages.NewAcountPage;
 import unidad2.utils.DataDriven;
 import unidad2.utils.Encoding;
+import unidad2.utils.Propertiesdriven;
 
 import java.util.ArrayList;
 
@@ -32,7 +33,7 @@ public class Tests {
         homePage = new HomePage(driver);
         loginPage = new LoginPage(homePage.getDriver());
         newAcountPage = new NewAcountPage(homePage.getDriver());
-        homePage.cargarSitio("https://open.spotify.com/intl-es");
+        homePage.cargarSitio(Propertiesdriven.obtenerProperty("url"));
         homePage.maximizarBrowser();
     }
 
@@ -42,7 +43,7 @@ public class Tests {
 
     @Test
     public void CP001_ErrorLogin(){
-        data = DataDriven.getTestData("CP001_ErrorLogin");
+        data = DataDriven.getTestData(Propertiesdriven.obtenerProperty("CP001"));
         homePage.irALoginPage();
         loginPage.iniciarSesion(data.get(1),data.get(2));
         Assertions.assertEquals(data.get(3)
@@ -51,7 +52,7 @@ public class Tests {
 
     @Test
     public void CP002_CreacionCtaSpotify(){
-        data = DataDriven.getTestData("CP002_CreacionCtaSpotify");
+        data = DataDriven.getTestData(Propertiesdriven.obtenerProperty("CP002"));
         homePage.irARegisterPage();
         newAcountPage.crearCtaSpotify(data.get(1),data.get(2),data.get(3),data.get(4),data.get(5),data.get(6), Integer.parseInt(data.get(7)), Boolean.valueOf(data.get(8)), Boolean.valueOf(data.get(9)));
         Assertions.assertEquals(Encoding.corregirEncoding(data.get(10))
