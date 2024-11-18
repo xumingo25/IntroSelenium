@@ -21,7 +21,7 @@ public class DataDriven {
 
         FileInputStream file = null;
         try {
-            file = new FileInputStream(Propertiesdriven.obtenerProperty("rutaExcel"));
+            file = new FileInputStream(System.getProperty("user.dir")+Propertiesdriven.obtenerProperty("rutaExcel"));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

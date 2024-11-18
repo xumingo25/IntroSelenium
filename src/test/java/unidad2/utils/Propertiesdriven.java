@@ -9,7 +9,7 @@ public class Propertiesdriven {
 
     public static String obtenerProperty(String key){//browser
         props = new Properties();
-        String rutaArchivo = System.getProperty("user.dir")+ "//src//test//resources//properties.properties";
+        String rutaArchivo = System.getProperty("user.dir")+"\\src\\test\\resources\\properties.properties";
 
         try{
             InputStream input =new FileInputStream(rutaArchivo);
